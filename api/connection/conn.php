@@ -4,7 +4,7 @@
 
 		private $hostname = 'localhost';
 		private $username = 'root';
-		private $dbname = 'sta_monica_concepcion';
+		private $dbname = 'mobile_health';
 		private $password = '';
 		private $conn = '';
 
