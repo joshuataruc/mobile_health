@@ -33,8 +33,7 @@
 				'middlename' => $row['middle_name'],
 				'dob' => $row['dob'],
 				'address' => $row['address'],
-				'contact' => $row['cont_number'],
-				'profile' => $row['profile']
+				'contact' => $row['cont_number']
 			);
 		} 
 		echo json_encode($post_array);
