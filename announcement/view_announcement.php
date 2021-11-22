@@ -35,17 +35,19 @@ $announcement_query = mysqli_query($con, $select_announcement);
 		<table id="announcement_tbl" class="table display table-hover" >
 			<thead>
 				<tr>
-					<th width="50%">Event Name</th>
-					<th width="12.5%">Date </th>
-					<th width="12.5%">Time</th>
-					<th width="12.5%">Posted By</th>
-					<th width="12.5%">Action</th>
+					<th >Event Name</th>
+					<th >Date </th>
+					<th >Location </th>
+					<th >Time</th>
+					<th >Posted By</th>
+					<th >Action</th>
 				</tr>				 	
 			</thead>	
 			<tbody>
 				<?php while ($announcement_row = $announcement_query->fetch_assoc()):?>
 					<tr>
 						<td><?php echo $announcement_row['event_name'] ; ?></td>
+						<td><?php echo $announcement_row['announcement_location'] ; ?></td>
 						<td><?php echo $announcement_row['event_date']; ?></td>
 						<td><?php echo $announcement_row['event_time']; ?></td>
 						<td><?php echo $announcement_row['posted_by']; ?></td>
