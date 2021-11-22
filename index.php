@@ -4,7 +4,7 @@ session_start();
 $select_appointment = "SELECT * FROM appointment ORDER BY appointment_id DESC LIMIT 10";
 $appointment_query = mysqli_query($con, $select_appointment);
 
-$select_announcement = "SELECT * FROM announcement_tbl ORDER BY announcement_id DESC LIMIT 10";
+$select_announcement = "SELECT * FROM announcement_tbl ORDER BY announcement_id DESC LIMIT 7";
 $announcement_query = mysqli_query($con, $select_announcement) or die($con->error);
 ?>
 <!DOCTYPE html>
