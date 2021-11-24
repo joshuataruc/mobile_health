@@ -74,11 +74,11 @@ $admin_row = $admin_query->fetch_assoc();
 						</div>
 						<div class="form-group col-md-6">
 							<label>Password</label>
-							<input type="password" name="password" id="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required /><br />
+							<input type="password" name="password" id="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" /><br />
 						</div>
 						<div class="form-group col-md-6">
 							<label>Confirm Password</label>
-							<input type="password" name="password" id="con-password" class="form-control" required />
+							<input type="password" name="password" id="con-password" class="form-control" />
 						</div>
 						<div class="col-md-12">
 							<div id="message">
@@ -89,7 +89,7 @@ $admin_row = $admin_query->fetch_assoc();
 								<p id="length" class="invalid"> Minimum <b>8 characters</b></p>
 								<p id="pass-message"></p>
 							</div><br>
-							<input type="submit" id="submit-btn" name="update_btn" value="Insert User" class="float-right btn btn-primary">
+							<input type="submit" id="submit-btn" name="update_btn" value="Update User" class="float-right btn btn-primary">
 						</div>
 					</div>
 				</form>
@@ -99,6 +99,9 @@ $admin_row = $admin_query->fetch_assoc();
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/number_only_input.js"></script>
 	<script src="../js/confirm_password.js"></script>
+	<script>
+		$('#submit-btn').attr('disabled', false);
+	</script>
 </body>
 
 </html>

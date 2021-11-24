@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2021 at 03:34 AM
+-- Generation Time: Nov 24, 2021 at 05:49 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -39,7 +39,8 @@ CREATE TABLE `admin_acc_tbl` (
 
 INSERT INTO `admin_acc_tbl` (`id`, `username`, `password`) VALUES
 (1, 'admin', '21232f297a57a5a74389'),
-(2, 'user', '5725dbcc7254ee8422d1');
+(2, 'user', '5725dbcc7254ee8422d1'),
+(3, 'test', '2c9341ca4cf3d87b9e4e');
 
 -- --------------------------------------------------------
 
@@ -55,7 +56,7 @@ CREATE TABLE `admin_registration_tbl` (
   `last_name` varchar(50) NOT NULL,
   `mid_name` varchar(50) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `cont_number` int(15) NOT NULL,
+  `cont_number` varchar(15) NOT NULL,
   `position` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -64,8 +65,9 @@ CREATE TABLE `admin_registration_tbl` (
 --
 
 INSERT INTO `admin_registration_tbl` (`id`, `username`, `password`, `first_name`, `last_name`, `mid_name`, `address`, `cont_number`, `position`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', 'admin', 'admin', 2147483647, 'admin'),
-(2, 'user', '5725dbcc7254ee8422d1cb60db29625c', 'user', 'user', 'midname', 'tarlac city', 2147483647, 'test user');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', 'admin', 'admin', '2147483647', 'admin'),
+(2, 'user', '5725dbcc7254ee8422d1cb60db29625c', 'user', 'user', 'midname', 'tarlac city', '2147483647', 'test user'),
+(3, 'test', '2c9341ca4cf3d87b9e4eb905d6a3ec45', 'test', 'test', 'test', 'Angeles', '09667615561', 'test admin');
 
 -- --------------------------------------------------------
 
@@ -261,17 +263,18 @@ CREATE TABLE `user_information_tbl` (
   `middle_name` varchar(50) NOT NULL,
   `dob` date NOT NULL,
   `address` varchar(255) NOT NULL,
-  `cont_number` varchar(15) NOT NULL
+  `cont_number` varchar(15) NOT NULL,
+  `profile` varchar(100) NOT NULL DEFAULT 'contacts.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_information_tbl`
 --
 
-INSERT INTO `user_information_tbl` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `dob`, `address`, `cont_number`) VALUES
-(2, 'darvs', '1b3231655cebb7a1f783eddf27d254ca', 'Darven', 'Gloria', '', '1999-06-16', '#18 Sinforosa Street Unit f', '2147483647'),
-(3, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'Mareve', 'Gloria', 'D.', '2020-09-28', 'Unit 17 4-3 Urbano St. Bagbag', '312312312'),
-(17, 'student', 'b0becd27dd9c337b84d793f1059d1aca', 'student', 'student', 'student', '2001-01-01', 'tarlac city tarlac', '0930081765');
+INSERT INTO `user_information_tbl` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `dob`, `address`, `cont_number`, `profile`) VALUES
+(2, 'darvs', '1b3231655cebb7a1f783eddf27d254ca', 'Darven', 'Gloria', '', '1999-06-16', '#18 Sinforosa Street Unit f', '2147483647', 'contacts.png'),
+(3, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'Mareve', 'Gloria', 'D.', '2020-09-28', 'Unit 17 4-3 Urbano St. Bagbag', '312312312', 'contacts.png'),
+(17, 'student', 'b0becd27dd9c337b84d793f1059d1aca', 'student', 'student', 'student', '2001-01-01', 'tarlac city tarlac', '0930081765', 'contacts.png');
 
 --
 -- Indexes for dumped tables
@@ -345,13 +348,13 @@ ALTER TABLE `user_information_tbl`
 -- AUTO_INCREMENT for table `admin_acc_tbl`
 --
 ALTER TABLE `admin_acc_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `admin_registration_tbl`
 --
 ALTER TABLE `admin_registration_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `announcement_tbl`
