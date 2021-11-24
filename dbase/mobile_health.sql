@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2021 at 05:10 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Nov 24, 2021 at 03:34 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,7 +38,8 @@ CREATE TABLE `admin_acc_tbl` (
 --
 
 INSERT INTO `admin_acc_tbl` (`id`, `username`, `password`) VALUES
-(1, 'admin', '21232f297a57a5a74389');
+(1, 'admin', '21232f297a57a5a74389'),
+(2, 'user', '5725dbcc7254ee8422d1');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,8 @@ CREATE TABLE `admin_registration_tbl` (
 --
 
 INSERT INTO `admin_registration_tbl` (`id`, `username`, `password`, `first_name`, `last_name`, `mid_name`, `address`, `cont_number`, `position`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', 'admin', 'admin', 2147483647, 'admin');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', 'admin', 'admin', 2147483647, 'admin'),
+(2, 'user', '5725dbcc7254ee8422d1cb60db29625c', 'user', 'user', 'midname', 'tarlac city', 2147483647, 'test user');
 
 -- --------------------------------------------------------
 
@@ -211,12 +213,7 @@ CREATE TABLE `pendinguser` (
 --
 
 INSERT INTO `pendinguser` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `dob`, `address`, `cont_number`) VALUES
-(1, 'a', '0cc175b9c0f1b6a831c399e269772661', 'a', 'a', 'a', '2021-10-07', 'a', '05286486482'),
-(3, 'a', '0cc175b9c0f1b6a831c399e269772661', 'a', 'a', 'a', '2021-10-17', 'aaaaaaasdas', '33203203030'),
-(4, 'asdasd', '0cc175b9c0f1b6a831c399e269772661', 'a', 'a', 'a', '2021-10-01', 'asdasdaasdasdad', '255215'),
-(5, 'a', '0cc175b9c0f1b6a831c399e269772661', 'a', 'a', 'a', '2021-10-07', 'a', '22222'),
-(6, 'a', '0cc175b9c0f1b6a831c399e269772661', 'a', 'a', 'a', '2021-10-07', 'a', '25156156'),
-(7, 'a', '0cc175b9c0f1b6a831c399e269772661', 'a', 'a', 'a', '2021-10-08', 'a', '2');
+(12, 'admin', '3698561c3306c8c1f8e36356a104c622', 'admin', 'admin', 'admin', '1998-10-04', 'tarlac city', '09667615561');
 
 -- --------------------------------------------------------
 
@@ -264,7 +261,7 @@ CREATE TABLE `user_information_tbl` (
   `middle_name` varchar(50) NOT NULL,
   `dob` date NOT NULL,
   `address` varchar(255) NOT NULL,
-  `cont_number` int(15) NOT NULL
+  `cont_number` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -272,8 +269,9 @@ CREATE TABLE `user_information_tbl` (
 --
 
 INSERT INTO `user_information_tbl` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `dob`, `address`, `cont_number`) VALUES
-(2, 'darvs', '1b3231655cebb7a1f783eddf27d254ca', 'Darven', 'Gloria', '', '1999-06-16', '#18 Sinforosa Street Unit f', 2147483647),
-(3, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'Mareve', 'Gloria', 'D.', '2020-09-28', 'Unit 17 4-3 Urbano St. Bagbag', 312312312);
+(2, 'darvs', '1b3231655cebb7a1f783eddf27d254ca', 'Darven', 'Gloria', '', '1999-06-16', '#18 Sinforosa Street Unit f', '2147483647'),
+(3, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'Mareve', 'Gloria', 'D.', '2020-09-28', 'Unit 17 4-3 Urbano St. Bagbag', '312312312'),
+(17, 'student', 'b0becd27dd9c337b84d793f1059d1aca', 'student', 'student', 'student', '2001-01-01', 'tarlac city tarlac', '0930081765');
 
 --
 -- Indexes for dumped tables
@@ -347,13 +345,13 @@ ALTER TABLE `user_information_tbl`
 -- AUTO_INCREMENT for table `admin_acc_tbl`
 --
 ALTER TABLE `admin_acc_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `admin_registration_tbl`
 --
 ALTER TABLE `admin_registration_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `announcement_tbl`
@@ -383,7 +381,7 @@ ALTER TABLE `notification_tbl`
 -- AUTO_INCREMENT for table `pendinguser`
 --
 ALTER TABLE `pendinguser`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `registration_key`
@@ -401,7 +399,7 @@ ALTER TABLE `user_accounts_tbl`
 -- AUTO_INCREMENT for table `user_information_tbl`
 --
 ALTER TABLE `user_information_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
