@@ -74,8 +74,8 @@ $announcement_query = mysqli_query($con, $select_announcement) or die($con->erro
               <p><small>Date:<?php echo date("M j, Y", strtotime($announce['event_date'])) . ' @ ' . $announce['event_time']  ?></small></p>
               <p><small>Location: <?php echo ucwords($announce['announcement_location']) ?></small></p>
               <p><small class="posted-by">
-                <?php echo ucwords($announce['posted_by']) ?>
-              </small></p>
+                  <?php echo ucwords($announce['posted_by']) ?>
+                </small></p>
             </div>
             <div class="">
               <img src="announcement/images/<?php echo $announce['announcement_image'] ?>" alt="<?php echo ucfirst($announce['event_name']) ?> image" class="thumbnail">
@@ -187,8 +187,6 @@ $announcement_query = mysqli_query($con, $select_announcement) or die($con->erro
   <script type="text/javascript">
     var today = new Date().toISOString().split("T")[0];
     document.getElementsByName("dob")[0].setAttribute("max", today);
-
-    
   </script>
 </body>
 <footer class="">
